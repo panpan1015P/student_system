@@ -1,0 +1,14 @@
+def dec(func):
+    def inner(*args,**kwargs):
+        inner.calls +=1
+        return func(*args,**kwargs)
+    inner.calls = 0
+    return inner
+@dec
+def show():
+    print( "HHH")
+
+n = int(input())
+for i in range(n) :
+    show()
+print(f"函数被调用{show.calls}次")
