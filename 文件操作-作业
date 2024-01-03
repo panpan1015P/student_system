@@ -1,0 +1,14 @@
+import os
+def read_txt():
+    file_exists = os.path.isfile("test.txt")
+    if file_exists:
+        with open("test.txt","r") as file:
+            content = file.read()
+            print(content)
+    else:
+        
+        with open("test.txt", "w") as file:
+            file.write("Some text to write to the file.")
+
+if __name__ == "__main__":
+    read_txt()
